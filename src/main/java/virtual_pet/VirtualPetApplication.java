@@ -19,7 +19,7 @@ public class VirtualPetApplication {
             String petName = scanner.nextLine();
 
             //Display initial pet stats to player
-            VirtualPet pet = new VirtualPet(petName, 32, 20, 85, 70);
+            VirtualPet pet = new VirtualPet(petName, 50, 50, 50, 50);
             scoreBoard(pet);
             System.out.println("If Happiness reaches 0, or Tiredness/Hunger/Thirst reaches 100," + petName + " dies.\n");
 
@@ -57,6 +57,7 @@ public class VirtualPetApplication {
         System.out.print("Pick a number between 1-5 that matches what you like to do with " + pet.getPetName() + ": ");
         int careChoice = scanner.nextInt();
         scanner.nextLine();
+        System.out.println();
 
 
         //Based on that choice, return a message, and move stats accordingly
