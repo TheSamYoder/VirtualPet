@@ -9,13 +9,18 @@ public class RoboticCatTest {
 
     @BeforeEach
     public void setup() {
-        underTest = new RoboticCat("TestCat");
+        underTest = new RoboticCat("TestCat", "description", 50, 50,50);
     }
 
 
     @Test
     public void roboticCatHasName() {
         assertEquals("TestCat", underTest.getName());
+    }
+
+    @Test
+    public void roboticCatHasDescription() {
+        assertEquals("description", underTest.getDescription());
     }
 
     @Test
@@ -36,6 +41,7 @@ public class RoboticCatTest {
         for (int i = 0; i < 20; i++) {
             underTest.maintenance();
         }
+        underTest.tick();
         assertTrue(underTest.getConditionLevel() == 100);
     }
 
@@ -46,6 +52,20 @@ public class RoboticCatTest {
         underTest.play();
         assertTrue(underTest.getConditionLevel() < initialConditionLevel);
         assertTrue(underTest.getBattLevel() < initialBatteryLevel);
+    }
+
+    @Test
+    public void roboticCatBatteryLevelGoesDownWhenPlayedWith(){
+        int initialBatteryLevel = underTest.getBattLevel();
+        underTest.play();
+        assertTrue(underTest.getBattLevel() < initialBatteryLevel);
+    }
+
+    @Test
+    public void roboticCatCleanlinessShouldGoDownWhenTicked(){
+        int initialCleanliness = underTest.getCleanliness();
+        underTest.tick();
+        assertTrue(underTest.getCleanliness() < initialCleanliness);
     }
 
 }

@@ -1,10 +1,12 @@
+RoboticCatTest.java
+ RoboticCatTest
+VirtualPetShelterTest.java
+ VirtualPetShelterTest
+OrganicCatTest.java
+ OrganicCatTest
 VirtualPetTest.java
  VirtualPetTest
 OrganicDogTest.java
  OrganicDogTest
 RoboticDogTest.java
  RoboticDogTest
-OrganicCatTest.java
- OrganicCatTest
-RoboticCatTest.java
- RoboticCatTest
